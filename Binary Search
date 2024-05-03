@@ -1,0 +1,58 @@
+//binary search
+//In this, we need to find middle element
+// first condition - array should be sorted
+//this is efficient as compared to other searching algorithms
+// beg, end, mid
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int n,k,flag=0,loc,mid,beg,end;
+    
+    //enter array size
+    cout<<"Enter size of array:";
+    cin>>n;
+    
+    int arr[n];
+    
+    //enter elements
+    cout<<"Enter sorted array elements-"<<endl;
+    for(int i=0;i<n;i++)
+     {
+        cout<<"Enter element "<<i+1<<" :";
+        cin>>arr[i];
+     }
+     
+     //enter key
+    cout<<"\nEnter key:";
+    cin>>k;
+    
+    //calculate mid
+    beg=0;
+    end=n-1;
+    mid=int(beg+end)/2;
+    
+    while((k!=arr[mid])&& (beg<end))
+     {
+             
+             if(k<arr[mid])
+             {
+               end=mid-1;  
+             }
+             if(k>arr[mid])
+             {
+               end=mid+1;  
+             }
+             
+             mid=int(beg+end)/2;
+     }
+     if(k==arr[mid])
+             {
+            cout<<"The search is sucessful at "<<mid+1<<" location."<<endl;
+             }
+     else
+     {
+          cout<<"The search is not sucessful.";
+     }
+    return 0;
+}
