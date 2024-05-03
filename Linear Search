@@ -1,0 +1,34 @@
+//linear search
+#include <iostream>
+using namespace std;
+int main() {
+    int n,k,flag=0,loc;
+    cout<<"Enter size of array:";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+     {
+        cout<<"Enter element "<<i+1<<" :";
+        cin>>arr[i];
+     }
+    cout<<"\nEnter key:";
+    cin>>k;
+    for(int i=0;i<n;i++)
+     {
+        if(arr[i]==k)
+        {
+            flag=1;
+            loc=i+1;
+            break;
+        }
+     }
+     if(flag==1)
+     {
+         cout<<"The search is sucessful at "<<loc<<" location."<<endl;
+     }
+     else
+     {
+          cout<<"The search is not sucessful.";
+     }
+    return 0;
+}
