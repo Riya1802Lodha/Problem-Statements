@@ -1,0 +1,73 @@
+Given an array Arr[ ] of N integers and a positive integer K. The task is to cyclically rotate the array clockwise by K.
+
+Note : Keep the first of the array unaltered.
+
+Example 1: • 5 —Value of N • {10, 20, 30, 40, 50} —Element of Arr[ ] • 2 —–Value of K
+
+Output : 40 50 10 20 30
+
+Example 2: • 4 —Value of N • {10, 20, 30, 40} —Element of Arr[] • 1 —–Value of K
+
+Output : 40 10 20 30
+
+Input Format
+
+• 5 —Value of N • {10, 20, 30, 40, 50} —Element of Arr[ ] • 2 —–Value of K
+
+Constraints
+
+NA
+
+Output Format
+
+Output : 40 50 10 20 30
+
+Sample Input 0
+
+5
+10 20 30 40 50
+2
+Sample Output 0
+
+40 50 10 20 30
+Sample Input 1
+
+4
+10 20 30 40
+1
+Sample Output 1
+
+40 10 20 30
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int n,k,newPos;
+    cout<<"Enter value of n: ";
+    cin>>n;
+    int arr[n];
+    int temp[n];
+    cout<<"Enter array elements-\n";
+    for(int i=0; i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Enter value of k: ";
+    cin>>k;
+     for(int i = 0; i < n; i++)
+    {
+        newPos = (i + k) % n; 
+        temp[newPos] = arr[i]; 
+    }
+     for(int i=0; i<n;i++)
+    {
+        cout<<temp[i]<<" ";
+    }
+    return 0;
+}
