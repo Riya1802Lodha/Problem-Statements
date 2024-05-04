@@ -1,0 +1,63 @@
+Capgemini
+1. Problem Statement – Raj wants to know the maximum marks scored by him in each semester.
+The mark should be between 0 to 100, if it goes beyond the range display “You have entered
+invalid mark.”
+Sample Input 1:
+● Enter no of semester:
+3
+● Enter no of subjects in 1 semester:
+3
+● Enter no of subjects in 2 semester:
+4
+● Enter no of subjects in 3 semester:
+2
+● Marks obtained in semester 1:
+50
+60
+70
+● Marks obtained in semester 2:
+90
+98
+76
+67
+● Marks obtained in semester 3:
+89
+76
+Sample Output 1:
+● Maximum mark in 1 semester:70
+● Maximum mark in 2 semester:98
+● Maximum mark in 3 semester:89
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ns;
+    cout << "Enter number of semesters: ";
+    cin >> ns;
+    for(int i = 0; i < ns; i++) 
+    {
+        int numSubjects, maxMark = 0;
+        cout << "Enter number of subjects in semester " << i + 1 << ": ";
+        cin >> numSubjects;
+        for(int j = 0; j < numSubjects; j++) {
+            int mark;
+            cout << "Enter marks obtained in subject " << j + 1 << ": ";
+            cin >> mark;
+            if(mark < 0 || mark > 100) {
+                cout << "You have entered invalid mark." << endl;
+                return 0;
+            }
+            if(mark > maxMark) {
+                maxMark = mark;
+            }
+        }
+        cout << "Maximum marks in semester " << i + 1 << ": " << maxMark << endl;
+    }
+
+    return 0;
+}
+
